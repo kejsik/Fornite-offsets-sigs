@@ -47,3 +47,6 @@ Tier : 0x73
 DisplayName : 0x90
 Bones Array : 0x5F8
 Bones cache : 0x608
+
+
+credits to efk

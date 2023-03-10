@@ -38,10 +38,10 @@ PlayerController : 0x30
 AcknowledgedPawn : 0x330
 RootComponent : 0x190
 RelativeLocation : 0x128
-TeamIndex : 0xwait
-CurrentWeapon : 0xwait
-PlayerState : 0x2B8
-Mesh : 0xwait
+TeamIndex : 0x10A0
+CurrentWeapon : 0x8F8
+PlayerState : 0x2A8
+Mesh : 0x310
 ItemDefinition : 0x18
 Tier : 0x73
 DisplayName : 0x90

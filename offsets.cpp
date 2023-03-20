@@ -1,12 +1,11 @@
-OFFSET (24.00)
-#define GWORLD = 0xEF005E0
-#define FNAME = 0xEF22B40
-#define RESULT_DA = 0xEE27DC0
+#define GWORLD = 0xEEDBD10
+#define FNAME = 0xEEFE2C0
+#define RESULT_DA = 0xEE02330
 
 -DECRYPT ANSI-
-
-uintptr_t FNameOffset = 0xEF22B40;
-uintptr_t value = 0xEE27DC0;
+NOT TESTED
+uintptr_t FNameOffset = 0xEEFE2C0;
+uintptr_t value = 0xEE02330;
 
          char* v2; // rdi
         unsigned int v4; // ebx
@@ -14,24 +13,33 @@ uintptr_t value = 0xEE27DC0;
         unsigned int v6; // edx
         unsigned int v7; // er8
 
+char* v2; // rbx
+        int v4; // edi
+        unsigned int v5; // eax
+        __int64 result; // rax
+        int v7; // er8
+        unsigned int v8; // edx
+
         v2 = buffer;
+
         v4 = Lenght;
-        result = read<DWORD>(module + value) >> 6;
-        v6 = ((_DWORD)result << 8) | ((unsigned int)result >> 8);
-        v7 = (unsigned int)result >> 4;
+
+        result = read<unsigned int>(module + value) >> 5;
+        v7 = 0;
         if (v4)
         {
-            result = v4;
             do
             {
-                v6 += v7;
-                *v2++ ^= v6;
-                --result;
-            } while (result);
+                v8 = *v2++;
+                result = (unsigned int)(v7 + result + 96);
+                ++v7;
+                *(v2 - 1) = (16 * v8) | (result ^ (v8 >> 4)) & 0xF;
+            } while (v7 < v4);
+        } } while (result);
         }
 
-Gworld : 0xEF005E0
-FName : 0xEF22B40
+Gworld : 0xEEDBD10
+FName : 0xwaitIDA
 GameInstance : 0x1B8
 LocalPlayerArray : 0x38
 PlayerController : 0x30

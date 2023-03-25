@@ -5,8 +5,10 @@ GObject : 48 8B 05 ? ? ? ? 48 8B 0C C8 48 8B 04 D1
 
 FreeFN : 48 89 D1 48 FF 25 ? ? ? ? C3
 
-GetNameByIndex : 40 53 48 83 EC 20 33 C0 48 8B DA 48 89 02 48 89 42 08 E8 ? ? ? ? 48 8B C3 48 83 C4 20 5B C3
+GetNameByIndex 40 53 48 83 EC 20 33 C0 48 8B DA 48 89 02 48 89 42 08 E8 ? ? ? ? 48 8B C3 48 83 C4 20 5B C3
 
 BoneMatrix : E8 ? ? ? ? 0F 10 40 68
 
-Only Uworld and GetNameByIndex changed.
+Decrypt ANSI : 48 89 5C 24 ? 57 48 83 EC 20 44 0F B7 01 48 8B FA 49 C1 E8 06 48 8D 51 04 48 8B D9 4D 03 C0 48 8B CF E8
+
+Only GetNameByIndex and decrypt ANSI changed.

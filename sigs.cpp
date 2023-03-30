@@ -11,4 +11,3 @@ BoneMatrix : E8 ? ? ? ? 0F 10 40 68
 
 Decrypt ANSI : 48 89 5C 24 ? 57 48 83 EC 20 44 0F B7 01 48 8B FA 49 C1 E8 06 48 8D 51 04 48 8B D9 4D 03 C0 48 8B CF E8
 
-Only GetNameByIndex and decrypt ANSI changed.

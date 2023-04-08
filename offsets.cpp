@@ -1,37 +1,35 @@
-#define GWORLD = 0xEF104C0
-#define FNAME = 0xEF8B000
-#define RESULT_DA = 0xEED8124
-#define GoObject = 0xED7A520
+#define GWORLD = 0xEF0F440
+#define FNAME = 0xEF89F80
+#define RESULT_DA = 17
+#define GObject = 0xED79528
 
-DECRYPT ANSI-
-uintptr_t FNameOffset = 0xEEFD140;
-uintptr_t value = 0xEED8124;
+-DECRYPT ANSI-
+uintptr_t FNameOffset = 0xEF89F80;
+int value = 17;
 
-char*v2; // rdi
-  int v4; // ebx
-  __int64 result; // rax
-  int v6; // er8
-  __int16 v7; // dx
+char *v2; // rdi
+  int v4; // ecx
+  unsigned int v5; // eax
+  __int64 v6; // rdx
 
   v2 = Buffer;
-  v4 = Lenght;
-  result = read<unsigned int>(module + value) >> 5;
-  v6 = 0;
-  if ( v4 )
+  v4 = value;
+  v5 = Lenght;
+  if ( v5 )
   {
+    v6 = v5;
     do
     {
-      v7 = result ^ (*v2 << 8);
-      result = (unsigned int)(result + 8 * v6++);
-      *v2 = HIBYTE(*v2) | v7 & 0xFF00;
-      ++v2;
+      LOWORD(v5) = v4 + ~*v2;
+      v4 += 7947;
+      *v2++ = v5;
+      --v6;
     }
-    while ( v6 < v4 );
-  }
+    while ( v6
 
 
-Gworld : 0xEF104C0
-FName : 0xEF0D0E0
+Gworld : 0xEF0F440
+FName : 0xEF89F80
 LocalPlayerArray : 0x38
 PlayerController : 0x30
 GameInstance : 0x1B8
@@ -53,7 +51,5 @@ LastFireTimeVerified : 0xADC
 CurrentVehicle : 0x2428
 ReviveFromDBNOTime : 0x44C0
 bIsDBNO : 0x832
-Bones Array : 0x5F8
-Bones cache : 0x608
 
 Credit to efk

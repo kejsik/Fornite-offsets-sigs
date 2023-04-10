@@ -52,4 +52,40 @@ CurrentVehicle : 0x2428
 ReviveFromDBNOTime : 0x44C0
 bIsDBNO : 0x832
 
+namespace WorldOffsets
+{
+    DWORD PersitentLevel = 0x30;
+    DWORD GameInstance = 0x1b8;
+};
+namespace ActorOffsets
+{
+    DWORD RootComponent = 0x190;
+    DWORD PlayerState = 0x2a8; //Can be Wrong
+    DWORD Mesh = 0x310;
+};
+namespace PlayerControllerOffsets
+{
+    DWORD AcknowledgedPawn = 0x330;
+    DWORD PlayerCameraManager = 0x340;
+    DWORD LocalPlayerCachedLODDistanceFactor = 0x38c;
+    DWORD GetControlRotation = 0x720; //vtable
+    DWORD SetControlRotation = 0x728; //vtable
+};
+namespace PlayerCameraManagerOffsets
+{
+    DWORD GetCameraCachePOV = 0x710; //vtable
+    DWORD GetLastFrameCameraCachePOV = 0x718; //vtable
+};
+namespace FortPawnOffsets
+{
+    DWORD CurrentVehicle = 0x2428;
+    DWORD CurrentWeapon = 0x8f8;
+    DWORD ReviveFromDBNOTime = 0x44c0;
+};
+namespace MeshAndUSceneComponentOffsets
+{
+    DWORD ComponentToWorld = 0x240;
+    DWORD BoneArray = 0x5f0;
+};
+
 Credit to efk

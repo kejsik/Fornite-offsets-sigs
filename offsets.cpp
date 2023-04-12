@@ -1,31 +1,42 @@
-#define GWORLD = 0xEF0F440
-#define FNAME = 0xEF89F80
-#define RESULT_DA = 17
-#define GObject = 0xED79528
+#define GWORLD = 0x1078A7D8
+#define FNAME = 0x10800400
+#define RESULT_DA = 0x10757720
+#define GObject = 0x105F09D0
 
 -DECRYPT ANSI-
-uintptr_t FNameOffset = 0xEF89F80;
-int value = 17;
-
-char *v2; // rdi
-  int v4; // ecx
-  unsigned int v5; // eax
-  __int64 v6; // rdx
-
-  v2 = Buffer;
-  v4 = value;
-  v5 = Lenght;
-  if ( v5 )
-  {
-    v6 = v5;
-    do
+uintptr_t FNameOffset = 0x10800400;
+ int Lenght = Entry >> 6;
+    char buffer[256];
+    uintptr_t value = 0x10757720;
+    if ((uint32_t)Lenght)
     {
-      LOWORD(v5) = v4 + ~*v2;
-      v4 += 7947;
-      *v2++ = v5;
-      --v6;
-    }
-    while ( v6
+        for (int x = 0; x < Lenght; ++x)
+        {
+            buffer[x] = read<char>(NPC + 4 + x);
+        }
+ 
+
+        char* v2; // rdi
+        unsigned int v4; // ebx
+        __int64 result; // rax
+        unsigned int v6; // edx
+        unsigned int v7; // er8
+
+        v2 = buffer;
+     
+        v4 = Lenght;
+        result = read<__int64>(module + value);
+        v6 = ((_DWORD)result << 8) | ((unsigned int)result >> 8);
+        v7 = (unsigned int)result >> 2;
+        if (v4)
+        {
+            result = v4;
+            do
+            {
+                v6 += v7;
+                *v2++ ^= v6;
+                --result;
+            } while (result);
 
 
 Gworld : 0x1078A7D8

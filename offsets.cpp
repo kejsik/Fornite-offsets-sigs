@@ -28,10 +28,8 @@ char *v2; // rdi
     while ( v6
 
 
-Gworld : 0xEF0F440
-FName : 0xEF89F80
-LocalPlayerArray : 0x38
-PlayerController : 0x30
+Gworld : 0x1078A7D8
+FName : 0x10800400
 GameInstance : 0x1B8
 AcknowledgedPawn : 0x330
 RootComponent : 0x190
@@ -40,16 +38,16 @@ TeamIndex : 0x10B0
 CurrentWeapon : 0x8F8
 PlayerState : 0x2A8
 Mesh : 0x310
-WeaponData : 0x3F8
-AmmoCount : 0xB8C
+WeaponData : 0x410
+AmmoCount : 0xBA4
 DisplayName : 0x90
-bADSWhileNotOnGround : 0x4E16
+bADSWhileNotOnGround : 0x4DD6
 Levels : 0x170
 PlayerCameraManager : 0x340
-LastFireTime : 0xAD8
-LastFireTimeVerified : 0xADC
+LastFireTime : 0xAF0
+LastFireTimeVerified : 0xAF4
 CurrentVehicle : 0x2428
-ReviveFromDBNOTime : 0x44C0
+ReviveFromDBNOTime : 0x4480
 bIsDBNO : 0x832
 
 namespace WorldOffsets
